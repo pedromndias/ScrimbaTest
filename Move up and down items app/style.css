@@ -1,0 +1,38 @@
+body {
+    background-color: #007f5f;
+}
+
+h2 {
+    margin: 10px;
+    box-shadow: 2px 2px 2px 2px;
+    background-color: #bfd200;
+}
+
+button {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #e85d04;
+    font-size: 1.2em;
+}
+
+.hero {
+    width: 700px;
+    margin: 50px auto;
+    background-color: #2b9348;
+    padding: 20px;
+}
+
+.grid {
+    background-color: #f9c74f;
+    width: 600px;
+    height: 150px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.button-container {
+    width: 300px;
+    margin: 5px auto;
+}
