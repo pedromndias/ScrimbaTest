@@ -1,0 +1,1 @@
+There is a manifest.json file that configures our app and provides Chrome metadata about it, including the icon for our app (from the file icon.png) and the permission to work with tabs. It was our first contact with JSON files in the course. 
