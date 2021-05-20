@@ -1,1 +1,3 @@
-There is a manifest.json file that configures our app and provides Chrome metadata about it, including the icon for our app (from the file icon.png) and the permission to work with tabs. It was our first contact with JSON files in the course. 
+This is an chrome extension app that saves inputs or tabs (main purpose is to save interesting leads from Linkdin profiles).
+There is a manifest.json file that configures our app and provides Chrome metadata about it, including the icon for our app (from the file icon.png) and the permission to work with tabs. It was our first contact with JSON files in the course.
+It makes use of local storage which is useful if we want to keep some data in the app even if the browser is refreshed. It also uses chrome.tabs.query() so we can get the active tab on the current window as an object and save its url.
