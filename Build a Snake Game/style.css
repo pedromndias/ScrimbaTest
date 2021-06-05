@@ -1,0 +1,70 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 100%;
+}
+
+h1 {
+    color: #fb8500;
+    text-shadow: 0 0 2px black, 0 0 2px black, 0 0 2px black, 0 0 2px black;
+    margin-top: 0px;
+}
+
+button {
+    background-color: #ffb703;
+    color: #023047;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 1px solid #fb8500;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #219ebc;
+    background-image: linear-gradient(135deg, #219ebc, #8ecae6);
+    padding-top: 20px;
+}
+
+/* We will create a grid with CSS in order to have an array with JS to populate with individual squares that can be added classes */
+.grid {
+    display: flex;
+    /* We should make sure all the squares will wrap on each other craeting a grid: */
+    flex-wrap: wrap;
+    /* The width and height will be 200px so we can fit 100 squares of 20px */
+    width: 200px;
+    height: 200px;
+    border: 5px solid #fb8500;
+    margin: 0 auto 20px auto;
+    background-color: #e9edc9;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+}
+
+/* Define a class for the squares that represent a snake: */
+.snake {
+    background-color: #606c38;
+    border-bottom-right-radius: 5px;
+}
+
+.apple {
+    background-color: #d62828;
+    border-radius: 7px;
+}
+
+#gameOver {
+    color: #ef476f;
+    margin: 0;
+}
+
+.adjustScoreText {
+    margin-bottom: 0;
+}
+
