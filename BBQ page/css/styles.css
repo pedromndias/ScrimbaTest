@@ -1,0 +1,197 @@
+/* Let's start by defining box-sizing in all of our elements so we can know 
+exactly what the width and height are when we define them */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    /* The next line is not necessary but we code it to just have a reference to the font-size: */
+    font-size: 1rem;
+    /* Let's define a dark text color that is not completely black so we don't have that much contrast */
+    color: #404040;
+    text-align: center;
+}
+
+
+/* The next part is about Typography: */
+
+h1 {
+    /* Let's define the font-size of h1 to be 2.25 times the font-size of the root (16px by default) */
+    font-size: 2.25rem;
+    font-weight: 300;
+    color: #fff;
+    /* By getting rid of margins we can then control the spaces easier: */
+    margin: 0;
+}
+
+/* Let's select the paragraphs immediately after an h1: */
+h1 + p {
+    color: #F18119;
+    font-weight: 900;
+    font-size: 1.3125rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.3125rem;
+    margin: 0;
+}
+
+h2 + p {
+    font-weight: 900;
+    color: #F18119;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.top-text {
+    font-size: 0.625rem;
+    margin: 0;
+    padding-top: 2px;
+    color: #F18119;
+    font-weight: 900;
+    text-transform: uppercase;
+    /* Let's set it to be the first of the childrem to appear (negative order). Note that the parent needs to have display: flex */
+    order: -1;
+    border-top: 5px solid #F18119;
+    /* Let's add an image (gradient) to the border: */
+    border-image: linear-gradient(to left, #ff713b, #ffa51d) 1;
+}
+
+.fine-print {
+    font-size: 0.625rem;
+    letter-spacing: 1px;
+}
+
+strong {
+    font-weight: 900;
+}
+
+
+/* This next part is about the intro section: */
+
+.intro {
+    /* Note how we add ../ so we go back on folder: 
+    Also note that we also add a gradient to the image: */
+    background-image: url(../images/ribs.jpg), linear-gradient(45deg, #404040, #F18119);
+    /* Let's blend the image and the gradient, keeping the lighter pixels: */
+    background-blend-mode: multiply;
+    /* Let's make the image cover all the container: */
+    background-size: cover;
+    /* And set a background-color in case the image takes some time to load: */
+    /* background-color: #404040; */
+    /* Let's set the position to center so the image is always centered: */
+    background-position: center;
+    padding: 0 .5em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Let's set a min-height so it is always at least 50 viewport height: */
+    min-height: 50vh;
+}
+
+
+/* The next section is about the main-content: */
+
+.main-content {
+    padding: 2em 1em;
+    /* Note how vertically the padding is 2em (twice the font-size of the parent, the body) and 1em for horinzontal */
+}
+
+/* Let's select only the direct children of .intro and .main-content: */
+.intro > *,
+.main-content > * {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* The next section is about the form: */
+
+.email-collector {
+    width: 80%;
+    max-width: 300px;
+}
+
+input,
+.btn {
+    width: 100%;
+    border-radius: 5px;
+}
+
+input {
+    /* Let's make the form inherit the font-family and text-align from its parent:  */
+    font-family: inherit;
+    text-align: inherit;
+    margin-bottom: .75em;
+    padding: .25em;
+    border: 1px solid #404040;
+    /* Let's create an animation when we focus the input fields (it continues on the next selector): */
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+input:focus {
+    transform: scale(1.1);
+    /* So when focused on the input field it will do a 250ms transition and scale itself 1.1 times. */
+}
+
+.btn {
+    display: inline-block;
+    padding: 1em 1.5em;
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(to left, #ff713b, #ffa51d);
+    color: white;
+    /* Let's create an animation when we hover the button (it continues on the next selector): */
+    transform: scale(1);
+    transition: transform 250ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    transform: scale(1.1);
+    /* So when hovered/focused the btn will do a 250ms transition and scale itself 1.1 times. */
+}
+
+
+/* The final section is about the media queries (for bigger screens): */
+
+@media (min-width: 1000px) {
+    body {
+        font-size: 1.125rem;
+        display: flex;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2,
+    h1 + p {
+        font-size: 1.75rem;
+    }
+
+    .intro,
+    .main-content {
+        width: 50%;
+        min-height: 100vh;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
